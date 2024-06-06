@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Russo_One } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const russo_one = Russo_One({subsets: ['latin'], weight:'400'});
+const inter = Inter ({
+  subsets: ['latin']
+});
 
 export const metadata: Metadata = {
-  title: "ShortUrl",
+  title: "Linkify",
   description: "Project by Chi0x03",
 };
 
@@ -15,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={russo_one.className}>{children}</body>
+    <html lang="pt-br">
+      <body className={inter.className + " " + "bg-ghost-white"}>{children}</body>
     </html>
   );
 }

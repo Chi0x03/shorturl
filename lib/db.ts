@@ -1,4 +1,4 @@
-// db.ts
+"use server"
 import { sql } from "@vercel/postgres";
 import { z } from "zod";
 
@@ -20,15 +20,13 @@ async function shortUrlExists(shortUrl: string) {
 }
 
 export async function createShortUrl(shortUrl: string, longUrl: string) {
-    console.time("insertdb")
     const myschema = z.string().url()
-    if (!myschema.parse(longUrl)) return false;
+    if (!myschema.safeParse(longUrl).success) return false;
 
     if (await shortUrlExists(shortUrl)) return false;
 
     try {
         await sql`INSERT INTO urls(short_url, long_url) VALUES (${shortUrl}, ${longUrl})`;
-        console.timeEnd("insertdb")
         return true; // Return true if insertion is successful
     } catch (error) {
         console.error(error);
