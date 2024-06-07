@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter ({
+const rubik = Rubik ({
   subsets: ['latin']
 });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className + " " + "bg-ghost-white"}>{children}</body>
+      <body className={rubik.className + " " + "bg-ghost-white"}>{children}</body>
     </html>
   );
 }
