@@ -38,7 +38,7 @@ export default function UrlForm() {
   return (
     <div>
       <form
-        className="flex items-center pt-5 pb-3"
+        className="flex items-center justify-center pt-5 pb-3"
         method="post"
         onSubmit={createUrl}
       >
