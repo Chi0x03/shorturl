@@ -30,7 +30,7 @@ const ShortUrlDisplay: React.FC<ShortUrlDisplayProps> = ({ shortUrl }) => {
       </div>
       <div className="flex items-center justify-center pt-3">
         <p className="border-2 border-cornflower-blue rounded-l-full py-2 px-4">
-          <a href={shortUrl} target="_blank" rel="noopener noreferrer">
+          <a href={shortUrl} target="_blank" rel="noopener noreferrer" data-test="short-url-link">
             {shortUrl}
           </a>
         </p>

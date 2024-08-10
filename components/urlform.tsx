@@ -48,10 +48,12 @@ export default function UrlForm() {
           name="url"
           placeholder="Ex: https://youtube.com"
           required
+          data-test="link-input"
         />
         <button
           type="submit"
           className="bg-cornflower-blue hover:bg-cornflower-blue-500 text-white font-bold py-2 px-4 pr-5 rounded-r-full h-11 flex items-center"
+          data-test="input-submit"
         >
           {spinner ? (
             <svg
